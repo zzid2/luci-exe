@@ -1,0 +1,49 @@
+{
+	"name": "tl-rtc-file",
+	"version": "10.2.8",
+	"description": "webrtc, p2p, file, screen, video, live, draw, chat",
+	"main": "main.js",
+	"scripts": {
+		"http-api": "cross-env tl_rtc_file_env_mode=http node tlapi",
+		"http-socket": "cross-env tl_rtc_file_env_mode=http node tlsocket",
+		"https-api": "cross-env tl_rtc_file_env_mode=https node tlapi",
+		"https-socket": "cross-env tl_rtc_file_env_mode=https node tlsocket",
+		"test": "cross-env mocha ./test/test.js",
+		"build:dev": "vite build --watch",
+		"build:pro": "vite build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tl-open-source/tl-rtc-file"
+	},
+	"keywords": [
+		"none"
+	],
+	"author": "iamtsm",
+	"license": "MIT",
+	"dependencies": {
+		"@grpc/grpc-js": "^1.8.0",
+		"@grpc/proto-loader": "^0.6.0",
+		"body-parser": "^1.20.2",
+		"concurrently": "^8.2.0",
+		"cookie-parser": "^1.4.6",
+		"cross-env": "^5.2.0",
+		"dotenv": "^16.3.1",
+		"express": "^4.17.1",
+		"glob": "^10.3.1",
+		"google-protobuf": "^3.0.0",
+		"lru-cache": "^10.0.1",
+		"mocha": "^10.2.0",
+		"mysql2": "^2.1.0",
+		"openai": "^3.3.0",
+		"request": "^2.88.2",
+		"rollup-plugin-copy": "^3.4.0",
+		"sequelize": "^6.1.0",
+		"sequelize-pool": "^6.0.0",
+		"socket.io": "^2.3.0",
+		"terser": "^5.18.2",
+		"tl-ngrpc": "^1.0.1",
+		"uuid": "^9.0.1",
+		"vite": "^4.3.9"
+	}
+}

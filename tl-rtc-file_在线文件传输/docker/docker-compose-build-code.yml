@@ -1,0 +1,77 @@
+## build the image from the Dockerfile in the current directory
+## 用于自己通过代码构建镜像并启动
+
+version: '3'
+services:
+
+  #api服务
+  api:
+    container_name: api
+    build: 
+      context: ./../
+      dockerfile: ./Dockerfile
+    env_file:
+      - ../tlrtcfile.env
+    command: 
+      - tlapi
+    ports:
+      - 9092:9092
+    links:
+      - mysql
+    depends_on:
+      - mysql
+      - coturn
+    volumes:
+      - ../tlrtcfile.env:/tlrtcfile/tlrtcfile.env
+
+  #socket服务
+  socket:
+    container_name: socket
+    build: 
+      context: ./../
+      dockerfile: ./Dockerfile
+    command: 
+      - tlsocket
+    env_file:
+      - ../tlrtcfile.env
+    ports:
+      - 8444:8444
+    links:
+      - mysql
+    depends_on:
+      - mysql
+      - coturn
+    volumes:
+      - ../tlrtcfile.env:/tlrtcfile/tlrtcfile.env
+
+  #mysql服务
+  mysql:
+    container_name: mysql
+    restart: always
+    env_file:
+      - ./mysql/mysql.env
+    build: 
+      context: ./mysql/
+      dockerfile: ./Dockerfile
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/data/mysql.env:/tlrtcfile/docker/mysql/mysql.env
+      - ./mysql/data/db:/var/lib/mysql
+      - ./mysql/data/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./mysql/data/log:/var/log/mysql
+      - ./mysql/data/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  #coturn服务
+  coturn:
+    container_name: coturn
+    env_file:
+      - ./coturn/coturn.env
+    build: 
+      context: ./coturn/
+      dockerfile: ./Dockerfile
+    ports:
+      - "3478:3478/udp"
+      - "3478:3478/tcp"
+    volumes:
+      - ./coturn/turnserver-with-secret-user.conf:/etc/turnserver.conf

@@ -1,0 +1,93 @@
+{
+	"version": "10.5.2",
+	"socket": {
+		"port": "请到 tlrtcfile.env 中进行配置",
+		"host": "请到 tlrtcfile.env 中进行配置"
+	},
+	"api": {
+		"port": "请到 tlrtcfile.env 中进行配置",
+		"router": {
+			"filter": {
+				"whiteDir": [],
+				"whiteFile": [
+					"router.js"
+				]
+			},
+			"res" : {
+				"/": "web-res/dist/"
+			}
+		}
+	},
+	"login": {
+		"appId" : "请到 tlrtcfile.env 中进行配置",
+		"appSecret" : "请到 tlrtcfile.env 中进行配置",
+		"token" : {
+			"url" : "请到 tlrtcfile.env 中进行配置",
+			"key" : "请到 tlrtcfile.env 中进行配置"
+		}
+	},
+	"manage": {
+		"room": "请到 tlrtcfile.env 中进行配置",
+		"password": "请到 tlrtcfile.env 中进行配置"
+	},
+	"webrtc": {
+		"turn": {
+			"host": "请到 tlrtcfile.env 中进行配置",
+			"secret": "请到 tlrtcfile.env 中进行配置",
+			"username": "请到 tlrtcfile.env 中进行配置",
+			"credential": "请到 tlrtcfile.env 中进行配置",
+			"expire" : "请到 tlrtcfile.env 中进行配置"
+		},
+		"stun": {
+			"host": "请到 tlrtcfile.env 中进行配置"
+		},
+		"iceTransportPolicy": "all",
+		"options": {
+			"offerToReceiveAudio": 1,
+			"offerToReceiveVideo": 1
+		}
+	},
+	"openai": {
+		"keys": [ "请到 tlrtcfile.env 中进行配置" ]
+	},
+	"oss": {
+		"seafile": {
+			"repoid": "请到 tlrtcfile.env 中进行配置",
+			"host": "请到 tlrtcfile.env 中进行配置",
+			"username": "请到 tlrtcfile.env 中进行配置",
+			"password": "请到 tlrtcfile.env 中进行配置"
+		},
+		"alyun": {
+			"AccessKey": "请到 tlrtcfile.env 中进行配置",
+			"SecretKey": "请到 tlrtcfile.env 中进行配置",
+			"bucket": "请到 tlrtcfile.env 中进行配置"
+		},
+		"txyun": {
+			"AccessKey": "请到 tlrtcfile.env 中进行配置",
+			"SecretKey": "请到 tlrtcfile.env 中进行配置",
+			"bucket": "请到 tlrtcfile.env 中进行配置"
+		},
+		"qiniuyun": {
+			"AccessKey": "请到 tlrtcfile.env 中进行配置",
+			"SecretKey": "请到 tlrtcfile.env 中进行配置",
+			"bucket": "请到 tlrtcfile.env 中进行配置"
+		}
+	},
+	"notify": {
+		"open": "请到 tlrtcfile.env 中进行配置",
+		"qiwei": {
+			"normal": [ "请到 tlrtcfile.env 中进行配置" ],
+			"error": [ "请到 tlrtcfile.env 中进行配置" ]
+		}
+	},
+	"db": {
+		"open": "请到 tlrtcfile.env 中进行配置",
+		"mysql": {
+			"host": "请到 tlrtcfile.env 中进行配置",
+			"port": "请到 tlrtcfile.env 中进行配置",
+			"dbName": "请到 tlrtcfile.env 中进行配置",
+			"user": "请到 tlrtcfile.env 中进行配置",
+			"password": "请到 tlrtcfile.env 中进行配置"
+		}
+	}
+}
