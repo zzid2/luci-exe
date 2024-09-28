@@ -16,8 +16,8 @@ namespace RevokeMsgPatcher
             return new Bag
             {
                 Apps = AppConfig(),
-                LatestVersion = "1.8",
-                PatchVersion = 20240615,
+                LatestVersion = "1.9",
+                PatchVersion = 20240929,
                 Notice = "",
                 NoticeUrl = "",
             };
@@ -1373,14 +1373,14 @@ namespace RevokeMsgPatcher
                             {
                                 Name="QQ.exe",
                                 StartVersion="9.9.10.00000",
-                                EndVersion="",
+                                EndVersion="9.9.15.00000",
                                 ReplacePatterns = new List<ReplacePattern>
                                 {
                                     new ReplacePattern
                                     {
                                         Search = ByteUtil.HexStringToByteArray("48 89 CE 48 8B 11 4C 8B 41 08 49 29 D0 48 8B 49 18 E8 3F 3F 3F 3F"),
                                         Replace = ByteUtil.HexStringToByteArray("48 89 CE 48 8B 11 4C 8B 41 08 49 29 D0 48 8B 49 18 B8 01 00 00 00"),
-                                        Category = "LiteLoaderQQNT+插件列表+防撤回"
+                                        Category = "请在新窗口内安装LiteLoaderQQNT"
                                     }
                                 }
                             }
